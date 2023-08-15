@@ -2,6 +2,7 @@
 """Class representing app amenities"""
 from models.base_model import BaseModel
 
-class Amenity(BaseMode):
+
+class Amenity(BaseModel):
     """amenity class representation"""
     name = ""
