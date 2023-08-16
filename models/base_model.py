@@ -14,7 +14,7 @@ class BaseModel:
           **kwargs - pair argumentd
     """
     def __init__(self, *args, **kwargs):
-    
+
         if args:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
