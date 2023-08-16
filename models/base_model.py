@@ -2,7 +2,8 @@
 """Base Class for the entire project"""
 
 from datetime import datetime
-from uuid import uuid4
+import uuid
+import models
 
 
 class BaseModel:
@@ -13,21 +14,21 @@ class BaseModel:
           **kwargs - pair argumentd
     """
     def __init__(self, *args, **kwargs):
-        date_time_format = '%Y-%m-%dT%H:%M:%S.%f'
+    
         if args:
-            self.id = str(uuid4())
+            self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
-            self.updated_at = datetime.now()
+            self.updated_at = self.created_at
             models.storage.new(self)
         else:
             for k, v in kwargs.items():
                 if k == "__class__":
                     continue
                 elif k == "created_at" or k == "updated_at":
-                    set_date = datetime.datetime.strptime(v, date_time_format)
-                    self.__dict__[k] = set_date
-                else:
+                    v = datetime.fromisoformat(v)
                     self.__dict__[k] = v
+                else:
+                    self.__dict__[k] = str(v)
 
     def __str__(self):
         """return str representation of class object"""
