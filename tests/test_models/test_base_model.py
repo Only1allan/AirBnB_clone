@@ -30,3 +30,4 @@ class TestBaseModel(unittest.TestCase):
         object = BaseModel()
         actual = object.to_dict()
         self.assertEqual(sorted(tuple(actual.keys())), sorted(required))
+        
