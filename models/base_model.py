@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Base Class for the entire project"""
 
-from . import models
 from datetime import datetime
 from uuid import uuid4
 
