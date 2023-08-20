@@ -44,6 +44,6 @@ class FileStorage:
                 for k, v in temp.items():
                     name = v["__class__"]
                     del v["__class__"]
-                    FileStorage.__objects[key] = eval(name + "(**v)")
+                    FileStorage.__objects[k] = eval(name + "(**v)")
         except FileNotFoundError:
             pass

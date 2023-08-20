@@ -14,11 +14,11 @@ class BaseModel:
           **kwargs - pair argumentd
     """
     def __init__(self, *args, **kwargs):
+        self.id = str(uuid.uuid4())
+        self.created_at = datetime.now()
+        self.updated_at = self.created_at
 
         if args:
-            self.id = str(uuid.uuid4())
-            self.created_at = datetime.now()
-            self.updated_at = self.created_at
             models.storage.new(self)
         else:
             for k, v in kwargs.items():
