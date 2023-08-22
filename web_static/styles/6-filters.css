@@ -1,0 +1,55 @@
+.locations div{
+    width: 25%;
+}
+.locations {
+    height: 100%;
+    width: 25%;
+    border-right: 1px solid #DDDDDD;
+    padding-left: 12px;
+    
+}
+.locations h3{
+    font-weight: 600;
+    margin: auto;
+    padding-top: 12px;
+}
+
+.locations h4{
+    font-weight: 400;
+    font-size: 14px;
+    margin: auto;
+}
+
+.amenities {
+    height: 100%;
+    width: 25%;
+    border-right: 1px solid #DDDDDD ;
+    padding-left: 12px;
+
+}
+.amenities h3{
+    font-weight: 600;
+    margin: auto;
+    padding-top: 12px;
+
+}
+
+.amenities h4{
+    font-weight: 400;
+    font-size: 14px;
+    margin: auto;
+   
+
+}
+.popover{
+    display: none; 
+    background-color: #FAFAFA;
+    list-style-type: none;
+    width: 100%;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    
+}
+.locations:hover .popover{
+    display: block;
+}
